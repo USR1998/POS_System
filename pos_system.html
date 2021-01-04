@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS SYSTEM</title>
+    <link rel="stylesheet" href="assests/css/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/fontAwsome/css/all.min.css">
+    <style>
+        #customer{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header class="jumbotron-fluid bg-info p-2">
+    <h1 class="position-absolute text-white">POS System</h1>
+    <ul class="list-group list-group-horizontal justify-content-end text-white" style="font-size: large; font-weight: bold;">
+        <li class="list-group-item bg-info" id="btndashboard" style="border: none">Dashboard</li>
+        <li class="list-group-item bg-info" id="btncust" style="border: none">Customer</li>
+        <li class="list-group-item bg-info" id="btnorder" style="border: none">Orders</li>
+        <li class="list-group-item bg-info" id="btnitem" style="border: none">Item</li>
+        <li class="list-group-item bg-info" id="btnsupp" style="border: none">Suppliers</li>
+
+    </ul>
+</header>
+<!--end of nav bar-->
+
+<!--start of dashboard-->
+<div class="container-fluid ">
+    <div class="row mt-5" >
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5" id="dashboard"  >
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+                    <div class="card border-primary text-center ">
+                        <div class="card-body bg-primary text-white">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="display-4"><i class="fas fa-user-friends"></i> Customers <a
+                                            href=""><i class="fas fa-chevron-right"
+                                                                        style="color: white"></i></a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-primary">
+                            <h5 data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Add
+                                Customers </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+                    <div class="card border-warning text-center">
+                        <div class="card-body bg-warning text-white">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="display-4"><i class="fas fa-shopping-cart"></i> Orders <a
+                                            href=""><i class="fas fa-chevron-right"
+                                                                      style="color: white"></i></a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-warning">
+                            <h5 data-toggle="modal" data-target="#exampleModa2"><i class="fas fa-plus"></i> Add Orders
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4">
+                    <div class="card border-success text-center">
+                        <div class="card-body bg-success text-white">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="display-4"><i class="fas fa-clipboard-list"></i> Items <a
+                                            href=""><i class="fas fa-chevron-right"
+                                                                    style="color: white"></i></a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-success">
+                            <h5 data-toggle="modal" data-target="#exampleModa3"><i class="fas fa-plus"></i> Add Items
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4">
+                    <div class="card border-danger text-center">
+                        <div class="card-body bg-danger text-white">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="display-4"><i class="fas fa-truck"></i> Suppliers <a
+                                            href=""><i class="fas fa-chevron-right"
+                                                                         style="color: white"></i></a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-danger">
+                            <h5 data-toggle="modal" data-target="#exampleModa4"><i class="fas fa-plus"></i> Add
+                                Suppliers</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal-->
+<div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" aria-labelledby="cust"
+                     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary" id="cust">Customer Form</h5>
+                <button type="button" class="close btn btn-outline-primary" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="customer-id" class="col-form-label text-primary">Customer ID:</label>
+                        <input type="text" class="form-control" id="customer-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-name" class="col-form-label text-primary">Name:</label>
+                        <input type="text" class="form-control" id="customer-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-address" class="col-form-label text-primary">Address:</label>
+                        <input type="text" class="form-control" id="customer-address">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-tp" class="col-form-label text-primary">Tele-no:</label>
+                        <input type="text" class="form-control" id="customer-tp">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  btn-outline-primary">Add</button>
+                <button type="button" class="btn  btn-outline-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModa2" data-backdrop="static" tabindex="-1" aria-labelledby="ord" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-warning" id="ord">Order Form</h5>
+                <button type="button" class="close btn btn-outline-warning" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="order-id" class="col-form-label text-warning">Order ID:</label>
+                        <input type="text" class="form-control" id="order-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-code" class="col-form-label text-warning">Item code:</label>
+                        <input type="text" class="form-control" id="item-code">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-id" class="col-form-label text-warning">Customer ID:</label>
+                        <input type="text" class="form-control" id="cust-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="qty" class="col-form-label text-warning">Qty:</label>
+                        <input type="text" class="form-control" id="qty">
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="col-form-label text-warning">Price:</label>
+                        <input type="text" class="form-control" id="price">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  btn-outline-warning">Add</button>
+                <button type="button" class="btn  btn-outline-warning" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModa3" data-backdrop="static" tabindex="-1" aria-labelledby="item"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success" id="item">Item Form</h5>
+                <button type="button" class="close btn btn-outline-success" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="code" class="col-form-label text-success">Code:</label>
+                        <input type="text" class="form-control" id="code">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-name" class="col-form-label text-success">Name:</label>
+                        <input type="text" class="form-control" id="item-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc" class="col-form-label text-success">Description:</label>
+                        <input type="text" class="form-control" id="desc">
+                    </div>
+                    <div class="form-group">
+                        <label for="uprice" class="col-form-label text-success">Unit Price:</label>
+                        <input type="text" class="form-control" id="uprice">
+                    </div>
+                    <div class="form-group">
+                        <label for="qt" class="col-form-label text-success">Qty:</label>
+                        <input type="text" class="form-control" id="qt">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  btn-outline-success">Add</button>
+                <button type="button" class="btn  btn-outline-success" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModa4" data-backdrop="static" tabindex="-1" aria-labelledby="sup" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="sup">Supplier Form</h5>
+                <button type="button" class="close btn btn-outline-danger" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="id" class="col-form-label text-danger">Supplier ID:</label>
+                        <input type="text" class="form-control" id="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="sup-name" class="col-form-label text-danger">Supplier Name:</label>
+                        <input type="text" class="form-control" id="sup-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="add" class="col-form-label text-danger">Address:</label>
+                        <input type="text" class="form-control" id="add">
+                    </div>
+                    <div class="form-group">
+                        <label for="tp" class="col-form-label text-danger">TP Number:</label>
+                        <input type="text" class="form-control" id="tp">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  btn-outline-danger">Add</button>
+                <button type="button" class="btn  btn-outline-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal end-->
+<!--end of dashboard-->
+
+<!--start of customer-->
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="customer" >
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <div class="card border-primary  ">
+                <div class="card-footer text-primary">
+                    <h5><i class="fas fa-user-friends"></i> Customer Form</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <form>
+                                <div class="form-group">
+                                    <label for="customerid" class="col-form-label text-primary">Customer ID:</label>
+                                    <input type="text" class="form-control" id="customerid">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cust-name" class="col-form-label text-primary">Name:</label>
+                                    <input type="text" class="form-control" id="cust-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cust-address" class="col-form-label text-primary">Address:</label>
+                                    <input type="text" class="form-control" id="cust-address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cust-tp" class="col-form-label text-primary">Tele-no:</label>
+                                    <input type="text" class="form-control" id="cust-tp">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-primary">
+                    <button type="button" class="btn  btn-outline-primary">Add</button>
+                    <button type="button" class="btn  btn-outline-primary">Edit</button>
+                    <button type="button" class="btn  btn-outline-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <table class="table table-hover ">
+                <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">Cust ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Tele-no</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>C001</td>
+                    <td>Nimal</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>C002</td>
+                    <td>Nimal</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>C003</td>
+                    <td>Nimal</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>C004</td>
+                    <td>Nimal</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>C005</td>
+                    <td>Nimal</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--end of customer-->
+
+<!--start of orders-->
+<main class="container-fluid" id="orders">
+    <div class="container-fluid mt-4">
+        <!--main tile-->
+        <div class="jumbotron pt-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card border-warning">
+                        <div class="card-header font-weight-bolder" style="background: #ffe144">Invoice Details</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Order ID :</label>
+                                            <input class="form-control" id="txtOrderID" type="text">
+                                            <span class="control-error"
+                                                  id="orderId-invalid-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Date :</label>
+                                            <input class="form-control text-warning" id="txtDate" type="date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Customer :</label>
+                                            <select class="form-control" id="selectCusID">
+
+                                            </select>
+                                            <span class="control-error"
+                                                  id="cus-empty-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label  class="text-warning">Customer ID</label>
+                                            <input class="form-control" id="orderCustomerID">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Name :</label>
+                                            <input class="form-control" id="orderCustomerName" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Salary :</label>
+                                            <input class="form-control" id="orderCustomerSalary" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="text-warning">Address :</label>
+                                            <input class="form-control" id="orderCustomerAddress" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-lg-0 mt-3">
+                    <div class="card border-warning">
+                        <div class="card-header font-weight-bolder" style="background: #ffe144">Item Select</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Item :</label>
+                                            <select class="form-control" id="selectItemCode"></select>
+                                            <span class="control-error"
+                                                  id="item-empty-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-warning">Item Code :</label>
+                                            <input class="form-control" id="txtItemCode" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label class="text-warning">Item Name :</label>
+                                            <input class="form-control" id="txtItemDescription" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="text-warning">Price :</label>
+                                            <input class="form-control" id="txtItemPrice" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label class="text-warning">QtyOnH :</label>
+                                            <input class="form-control" id="txtQTYOnHand" type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <hr>
+                                    <div class="col-12 mt-4">
+                                        <div class="form-group">
+                                            <label class="text-warning">Order Quantity :</label>
+                                            <input class="form-control" id="txtQty" min="1" type="number">
+                                            <span class="control-error" id="order-qty-empty-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right">
+                                    <button class="btn btn-outline-warning col-12 col-sm-auto" id="btnAddToTable" type="button">
+                                        Add Item
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <section class="content-box-2 p-4 ">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="" id="total-text">Total : </span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span id="total">00.0</span> Rs/=
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span id="total-text1">SubTotal : </span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span id="subtotal">00.0</span> Rs/=
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-6 mt-2">
+                                <div class="form-group">
+                                    <label>Cash</label>
+                                    <input class="form-control" id="txtCash" min="0" typeselectCusID="number">
+                                    <span class="control-error"
+                                          id="cash-empty-error"></span>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-2">
+                                <div class="form-group">
+                                    <label>Discount</label>
+                                    <input class="form-control" id="txtDiscount" min="0" type="number">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="form-group">
+                                    <label>Balance</label>
+                                    <input class="form-control" id="txtBalance" type="text">
+                                </div>
+                            </div>
+                            <div class="col-4 mt-4">
+                                <button class="btn btn-outline-warning" id="btnSubmitOrder" type="button">Purchase</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--order table-->
+            <div class="col-md-12 mt-4" style="height:180px; overflow-y: scroll">
+                <table class="table table-bordered text-white" >
+                    <thead class="none" style="background: #ffe144">
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-light text-dark" id="orderTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <!---------->
+        </div>
+    </div>
+</main>
+<!--end of orders-->
+
+<!--start of items-->
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="items" style="display: none">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <div class="card border-success  ">
+                <div class="card-footer text-success">
+                    <h5><i class="fas fa-clipboard-list"></i> Item Form</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <form>
+                                <div class="form-group">
+                                    <label for="icode" class="col-form-label text-success">Code:</label>
+                                    <input type="text" class="form-control" id="icode">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iname" class="col-form-label text-success">Name:</label>
+                                    <input type="text" class="form-control" id="iname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iuprice" class="col-form-label text-success">Unit Price:</label>
+                                    <input type="text" class="form-control" id="iuprice">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iqty" class="col-form-label text-success">Qty:</label>
+                                    <input type="text" class="form-control" id="iqty">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-primary">
+                    <button type="button" class="btn  btn-outline-success">Add</button>
+                    <button type="button" class="btn  btn-outline-success">Edit</button>
+                    <button type="button" class="btn  btn-outline-success">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <table class="table table-hover ">
+                <thead>
+                <tr class="bg-success text-white">
+                    <th scope="col">Item code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Qty</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>I001</td>
+                    <td>apple</td>
+                    <td>net weight 150g</td>
+                    <td>Rs.70.00</td>
+                    <td>100</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--end of items-->
+
+<!--start of suppliers-->
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="suppliers" style="display: none">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <div class="card border-danger  ">
+                <div class="card-footer text-danger">
+                    <h5><i class="fas fa-truck"></i> Suppliers Form</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <form>
+                                <div class="form-group">
+                                    <label for="sid" class="col-form-label text-danger">Supplier ID:</label>
+                                    <input type="text" class="form-control" id="sid">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sname" class="col-form-label text-danger">Supplier Name:</label>
+                                    <input type="text" class="form-control" id="sname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sadd" class="col-form-label text-danger">Address:</label>
+                                    <input type="text" class="form-control" id="sadd">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stp" class="col-form-label text-danger">TP Number:</label>
+                                    <input type="text" class="form-control" id="stp">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-danger">
+                    <button type="button" class="btn  btn-outline-danger">Add</button>
+                    <button type="button" class="btn  btn-outline-danger">Edit</button>
+                    <button type="button" class="btn  btn-outline-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 ">
+            <table class="table table-hover ">
+                <thead>
+                <tr class="bg-danger text-white">
+                    <th scope="col">Supplier ID</th>
+                    <th scope="col">Supplier Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Tele-no</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+                <tr>
+                    <td>S001</td>
+                    <td>B.T.Suppliers</td>
+                    <td>Panadura</td>
+                    <td>077-7003478</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--end of suppliers-->
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script src="assests/lib/jquery-3.5.1.min.js"></script>
+<script>
+    $('#btndashboard').on("click", function () {
+        $('#dashboard').css("display", 'block');
+        $('#customer').css("display", 'none');
+        $('#orders').css("display", 'none');
+        $('#items').css("display", 'none');
+        $('#suppliers').css("display", 'none');
+    });
+    $('#btncust').on("click", function () {
+        $('#dashboard').css("display", 'none');
+        $('#customer').css("display", 'block');
+        $('#orders').css("display", 'none');
+        $('#items').css("display", 'none');
+        $('#suppliers').css("display", 'none');
+    });
+    $('#btnorder').on('click', function () {
+        $('#dashboard').css('display', 'none');
+        $('#customer').css('display', 'none');
+        $('#orders').css('display', 'block');
+        $('#items').css('display', 'none');
+        $('#suppliers').css('display', 'none');
+    });
+    $('#btnitem').on('click', function () {
+        $('#dashboard').css('display', 'none');
+        $('#customer').css('display', 'none');
+        $('#orders').css('display', 'none');
+        $('#items').css('display', 'block');
+        $('#suppliers').css('display', 'none');
+    });
+    $('#btnsupp').on('click', function () {
+        $('#dashboard').css('display', 'none');
+        $('#customer').css('display', 'none');
+        $('#orders').css('display', 'none');
+        $('#items').css('display', 'none');
+        $('#suppliers').css('display', 'block');
+    });
+</script>
+</body>
+</html>
